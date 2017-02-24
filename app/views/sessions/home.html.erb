@@ -11,6 +11,7 @@
 		<style>
 			.left{
 				/*background-color: green;*/
+				height: 750px;
 			}
 			.right{
 				/*background-color: red;*/
@@ -44,10 +45,24 @@
 			    font-size: 1.5em;
 			    background: none;
 				color: #ff99ca !important;
-			    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 			}
 			.fotorama__arrow{
 				/*color: #ff99ca !important;*/
+			}
+			.social{
+				width: 100%;
+				position: absolute;
+				bottom: 5%;
+			}
+			.social img{
+				display: inline;
+			}
+			.social img:hover{
+				opacity: 0.7;
+			}
+			.soIcon{
+				margin-left: 3%;
 			}
 		</style>
 	</head>
@@ -62,6 +77,11 @@
 						<h3><a href="asdf">PAST WORK</a></h3>
 						<h3><a href="/about">ABOUT</a></h3>
 						<h3><a href="/contact">CONTACT</a></h3>
+					</div>
+					<div class="social">
+						<a href="asdf"><%= image_tag 'facebook.png' %></a>
+						<a href="asdf" class="soIcon"><%= image_tag 'instagram.png' %></a>
+						<a href="asdf" class="soIcon"><%= image_tag 'twitter.png' %></a>
 					</div>
 				</div>
 				<div class="col-md-10 right">

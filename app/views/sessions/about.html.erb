@@ -7,6 +7,7 @@
 		</script>
 		<style>
 			.left{
+				height: 750px;
 				/*background-color: green;*/
 			}
 			.right{
@@ -53,11 +54,25 @@
 				text-align: center;
 			}
 			.headshotImg{
-				width: 50%;
-				height: 30%;
+/*				width: 50%;
+				height: 30%;*/
 			}
 			.textBody{
-				margin-top: 3%;
+    			margin: 3% 6% 0%;
+			}
+			.social{
+				width: 100%;
+				position: absolute;
+				bottom: 5%;
+			}
+			.social img{
+				display: inline;
+			}
+			.social img:hover{
+				opacity: 0.7;
+			}
+			.soIcon{
+				margin-left: 3%;
 			}
 		</style>
 	</head>
@@ -73,17 +88,20 @@
 						<h3><a href="/about">ABOUT</a></h3>
 						<h3><a href="/contact">CONTACT</a></h3>
 					</div>
+					<div class="social">
+						<a href="asdf"><%= image_tag 'facebook.png' %></a>
+						<a href="asdf" class="soIcon"><%= image_tag 'instagram.png' %></a>
+						<a href="asdf" class="soIcon"><%= image_tag 'twitter.png' %></a>
+					</div>
 				</div>
 				<div class="col-md-10 right">
 					<div class="textDiv">
-						<div class="headshot"><img src="http://lorempixel.com/output/people-q-c-640-480-6.jpg" class="headshotImg">
+						<div class="headshot"><img src="http://data.whicdn.com/images/82351288/original.png" class="headshotImg">
 						</div>
 						<div class="textBody">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam congue ornare. Duis non nulla diam. Quisque hendrerit odio pellentesque, mollis ligula sed, eleifend lorem. Pellentesque ac risus vitae turpis pretium egestas eu at ex. Praesent vel ante non dolor lacinia lacinia. Mauris congue neque in justo volutpat luctus. Vestibulum tincidunt justo nec condimentum sollicitudin. Phasellus ut ex a nibh tincidunt porttitor. Sed tellus nisi, condimentum sed suscipit quis, porttitor et felis. Vestibulum aliquet ornare mattis. Nulla scelerisque, ligula nec rutrum tempus, nunc enim egestas risus, vitae vehicula ligula nulla nec lacus. Fusce consectetur pellentesque dui, ut aliquam nisi tempor a. Proin sed malesuada erat, pulvinar malesuada sapien. Ut placerat eleifend nulla, non consequat augue hendrerit feugiat. Aliquam suscipit leo eros, sed pharetra justo vulputate non. Curabitur sit amet fermentum est, quis faucibus mauris.</p>
 
 						<p>Mauris a interdum turpis. Mauris posuere sem vitae sapien finibus dapibus. Aenean molestie enim vel ex bibendum, ac rutrum sapien fringilla. Etiam dapibus ligula sed massa aliquam, tempus mollis est rutrum. Ut sit amet sapien id elit feugiat viverra et eget libero. Vivamus ipsum libero, tincidunt ac lobortis ac, tincidunt auctor lacus. Quisque augue ante, tincidunt laoreet nulla vitae, tincidunt congue lorem. Aliquam eleifend, felis ornare pretium mollis, diam velit tristique lacus, quis efficitur lectus tortor non nunc.</p>
-
-						<p>Quisque mollis diam vitae orci semper, id pulvinar ligula laoreet. Mauris eros nisi, pellentesque in consectetur in, porttitor vel ipsum. Sed nisl erat, venenatis ac varius a, lobortis ut orci. Integer venenatis fringilla faucibus. Curabitur faucibus condimentum molestie. In facilisis, tortor ut posuere rhoncus, metus nulla lacinia nisi, sed pretium risus metus nec ipsum. Phasellus vel turpis ac ligula eleifend finibus ac sed mauris. Curabitur lobortis fermentum felis, id pretium magna eleifend sed. Phasellus egestas hendrerit vulputate. Duis consectetur eleifend orci, in tempor diam dignissim in. Aliquam erat volutpat. Integer aliquet massa sit amet odio suscipit sollicitudin. Etiam non volutpat eros. Sed rutrum pellentesque rhoncus.</p>
 						</div>
 					</div>
 				</div>

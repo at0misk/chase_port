@@ -8,6 +8,7 @@
 		<style>
 			.left{
 				/*background-color: green;*/
+				height: 750px;
 			}
 			.right{
 				/*background-color: red;*/
@@ -47,6 +48,7 @@
 				/*color: #ff99ca !important;*/
 			}
 			.textDiv{
+				margin-top: 6%;
 				margin-left: 25%;
 			}
 			.headshot{
@@ -114,6 +116,20 @@ fieldset[disabled] .sub.active {
 label{
   color: #FF64C7; 
 }
+			.social{
+				width: 100%;
+				position: absolute;
+				bottom: 5%;
+			}
+			.social img{
+				display: inline;
+			}
+			.social img:hover{
+				opacity: 0.7;
+			}
+			.soIcon{
+				margin-left: 3%;
+			}
 		</style>
 	</head>
 	<body>
@@ -127,6 +143,11 @@ label{
 						<h3><a href="asdf">PAST WORK</a></h3>
 						<h3><a href="/about">ABOUT</a></h3>
 						<h3><a href="/contact">CONTACT</a></h3>
+					</div>
+					<div class="social">
+						<a href="asdf"><%= image_tag 'facebook.png' %></a>
+						<a href="asdf" class="soIcon"><%= image_tag 'instagram.png' %></a>
+						<a href="asdf" class="soIcon"><%= image_tag 'twitter.png' %></a>
 					</div>
 				</div>
 				<div class="col-md-10 right">
