@@ -1,0 +1,76 @@
+<html>
+	<head>
+<!-- fotorama.css & fotorama.js. -->
+	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    // alert("Ready");
+			});
+		</script>
+		<style>
+			.left{
+				/*background-color: green;*/
+			}
+			.right{
+				/*background-color: red;*/
+			}
+			.container-fluid{
+				margin-top: 5%;
+				margin-left: 10%;
+				/*background-color: orange;*/
+				height: 750px;
+			}
+			h2{
+				/*color: #ff64c7 !important;*/
+				/*font-weight: bold;*/
+				/* Lighter Color in logo is #ff99ca*/
+			}
+			h2:hover{
+				/*color: #ff99ca !important;*/
+			}
+			a:hover{
+				text-decoration: none;
+				color: #ff99ca !important;
+			}
+			a{
+				font-weight: bold;
+				color: #ff64c7 !important;
+			}
+			.leftNav{
+				margin-top: 10%;
+			}
+			.fotorama__caption__wrap{
+			    font-size: 1.5em;
+			    background: none;
+				color: #ff99ca !important;
+			    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			}
+			.fotorama__arrow{
+				/*color: #ff99ca !important;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2 left">
+					<a href="/home"><%= image_tag 'logo2.png' %></a>
+					<div class="leftNav">
+						<h3><a href="asdf">ARTS & SHAFTS</a></h3>
+						<h3><a href="asdf">CUNTS & CRAFTS</a></h3>
+						<h3><a href="asdf">PAST WORK</a></h3>
+						<h3><a href="/about">ABOUT</a></h3>
+						<h3><a href="/contact">CONTACT</a></h3>
+					</div>
+				</div>
+				<div class="col-md-10 right">
+					<div class="fotorama">
+					  <img src="http://s.fotorama.io/1.jpg" data-caption="FIRST TITLE">
+					  <img src="http://s.fotorama.io/2.jpg" data-caption="SECOND TITLE">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    // alert("Ready");
+			});
+		</script>
+		<style>
+			.left{
+				/*background-color: green;*/
+			}
+			.right{
+				/*background-color: red;*/
+			}
+			.container{
+				margin-top: 15%;
+			}
+			h2{
+				/*color: #ff64c7 !important;*/
+				/*font-weight: bold;*/
+				/* Lighter Color in logo is #ff99ca*/
+			}
+			h2:hover{
+				/*color: #ff99ca !important;*/
+			}
+			a:hover{
+				text-decoration: none;
+				color: #ff99ca !important;
+			}
+			a{
+				font-weight: bold;
+				color: #ff64c7 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 left">
+					<a href="/home"><%= image_tag 'logo1.png' %></a>
+				</div>
+				<div class="col-md-4 right">
+					<h2><a href="asdf">ARTS & SHAFTS</a></h2>
+					<h2><a href="asdf">CUNTS & CRAFTS</a></h2>
+					<h2><a href="asdf">PAST WORK</a></h2>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,176 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    // alert("Ready");
+			});
+		</script>
+		<style>
+			.left{
+				/*background-color: green;*/
+			}
+			.right{
+				/*background-color: red;*/
+			}
+			.container-fluid{
+				margin-top: 5%;
+				margin-left: 10%;
+				/*background-color: orange;*/
+				height: 750px;
+			}
+			h2{
+				/*color: #ff64c7 !important;*/
+				/*font-weight: bold;*/
+				/* Lighter Color in logo is #ff99ca*/
+			}
+			h2:hover{
+				/*color: #ff99ca !important;*/
+			}
+			a:hover{
+				text-decoration: none;
+				color: #ff99ca !important;
+			}
+			a{
+				font-weight: bold;
+				color: #ff64c7 !important;
+			}
+			.leftNav{
+				margin-top: 10%;
+			}
+			.fotorama__caption__wrap{
+			    font-size: 1.5em;
+			    background: none;
+				color: #ff99ca !important;
+			    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			}
+			.fotorama__arrow{
+				/*color: #ff99ca !important;*/
+			}
+			.textDiv{
+				margin-left: 25%;
+			}
+			.headshot{
+				text-align: center;
+			}
+			.headshotImg{
+				width: 50%;
+				height: 30%;
+			}
+			.textBody{
+				margin-top: 3%;
+			}
+			.sub{
+				margin-top: 5%;
+			}
+			.form-control:focus {
+			  border-color: #ff99ca;
+			  /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);*/
+			}
+.sub { 
+  color: #ffffff; 
+  background-color: #FF64C7; 
+  border-color: #A36281; 
+} 
+ 
+.sub:hover, 
+.sub:focus, 
+.sub:active, 
+.sub.active, 
+.open .dropdown-toggle.sub { 
+  color: #ffffff; 
+  background-color: #FF99CA; 
+  border-color: #A36281; 
+} 
+ 
+.sub:active, 
+.sub.active, 
+.open .dropdown-toggle.sub { 
+  background-image: none; 
+} 
+ 
+.sub.disabled, 
+.sub[disabled], 
+fieldset[disabled] .sub, 
+.sub.disabled:hover, 
+.sub[disabled]:hover, 
+fieldset[disabled] .sub:hover, 
+.sub.disabled:focus, 
+.sub[disabled]:focus, 
+fieldset[disabled] .sub:focus, 
+.sub.disabled:active, 
+.sub[disabled]:active, 
+fieldset[disabled] .sub:active, 
+.sub.disabled.active, 
+.sub[disabled].active, 
+fieldset[disabled] .sub.active { 
+  background-color: #FF64C7; 
+  border-color: #A36281; 
+} 
+ 
+.sub .badge { 
+  color: #FF64C7; 
+  background-color: #ffffff; 
+}
+label{
+  color: #FF64C7; 
+}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-2 left">
+					<a href="/home"><%= image_tag 'logo2.png' %></a>
+					<div class="leftNav">
+						<h3><a href="asdf">ARTS & SHAFTS</a></h3>
+						<h3><a href="asdf">CUNTS & CRAFTS</a></h3>
+						<h3><a href="asdf">PAST WORK</a></h3>
+						<h3><a href="/about">ABOUT</a></h3>
+						<h3><a href="/contact">CONTACT</a></h3>
+					</div>
+				</div>
+				<div class="col-md-10 right">
+					<div class="textDiv">
+						<form>
+							<div class="row">
+								<div class="col-md-4">
+								<label for="name">FIRST NAME</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+								<label for="name">LAST NAME</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+								<label for="name">EMAIL</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+								<label for="name">SUBJECT</label>
+								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+								<label for="name">MESSAGE</label>
+    							<textarea class="form-control" id="exampleTextarea" rows="5"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<button type="submit" class="btn btn-block sub">SEND</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
