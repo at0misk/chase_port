@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'home' => 'sessions#home'
   get 'about' => 'sessions#about'
   get 'contact' => 'sessions#contact'
+  get 'no_party' => 'sessions#no'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
