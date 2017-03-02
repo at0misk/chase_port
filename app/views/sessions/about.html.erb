@@ -35,8 +35,11 @@
 				font-weight: bold;
 				color: #ff64c7 !important;
 			}
+			.about{
+				margin-top: 2em;
+			}
 			.leftNav{
-				margin-top: 10%;
+				margin-top: 2em;
 			}
 			.fotorama__caption__wrap{
 			    font-size: 1.5em;
@@ -71,9 +74,6 @@
 			.social img:hover{
 				opacity: 0.7;
 			}
-			.soIcon{
-				margin-left: 3%;
-			}
 		</style>
 	</head>
 	<body>
@@ -82,16 +82,14 @@
 				<div class="col-md-2 left">
 					<a href="/home"><%= image_tag 'logo2.png' %></a>
 					<div class="leftNav">
-						<h3><a href="asdf">ARTS & SHAFTS</a></h3>
 						<h3><a href="asdf">CUNTS & CRAFTS</a></h3>
-						<h3><a href="asdf">PAST WORK</a></h3>
-						<h3><a href="/about">ABOUT</a></h3>
-						<h3><a href="/contact">CONTACT</a></h3>
+						<h3><a href="asdf">ARTS & SHAFTS</a></h3>
+						<h3><a href="asdf">THE CLASSIC</a></h3>
+						<h3 class="about"><a href="/about">ABOUT</a></h3>
+						<h3 class="contact"><a href="/contact">CONTACT</a></h3>
 					</div>
 					<div class="social">
-						<a href="asdf"><%= image_tag 'facebook.png' %></a>
 						<a href="asdf" class="soIcon"><%= image_tag 'instagram.png' %></a>
-						<a href="asdf" class="soIcon"><%= image_tag 'twitter.png' %></a>
 					</div>
 				</div>
 				<div class="col-md-10 right">

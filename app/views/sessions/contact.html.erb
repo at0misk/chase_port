@@ -2,7 +2,28 @@
 	<head>
 		<script type="text/javascript">
 			$(document).ready(function(){
-			    // alert("Ready");
+				function fadeCB(callback){
+				  $('.formOut').fadeOut(600);
+				  callback;
+				}
+
+				function fadeIn(){
+				  $('.formIn').fadeIn(600);
+				}
+			      $('#mailerform').on('submit', function(){
+			      var valuesToSubmit = $(this).serialize();
+			      $.ajax({
+			          type: "POST",
+			          url: "/mail", //sumbits it to the given url of the form
+			          data: valuesToSubmit,
+			          success: function(result){
+			            $('.formOut').fadeOut(600, function(){
+			              $('.formIn').fadeIn(600);
+			            });
+			          } // you want a difference between normal and ajax-calls, and json is standard
+			      })
+			      return false; // prevents normal behaviour
+			    });
 			});
 		</script>
 		<style>
@@ -35,8 +56,11 @@
 				font-weight: bold;
 				color: #ff64c7 !important;
 			}
+			.about{
+				margin-top: 2em;
+			}
 			.leftNav{
-				margin-top: 10%;
+				margin-top: 2em;
 			}
 			.fotorama__caption__wrap{
 			    font-size: 1.5em;
@@ -127,8 +151,11 @@ label{
 			.social img:hover{
 				opacity: 0.7;
 			}
-			.soIcon{
-				margin-left: 3%;
+			.formIn{
+				display: none;
+			    margin-top: 6%;
+			    margin-left: 25%;
+  				color: #FF64C7; 
 			}
 		</style>
 	</head>
@@ -138,49 +165,48 @@ label{
 				<div class="col-md-2 left">
 					<a href="/home"><%= image_tag 'logo2.png' %></a>
 					<div class="leftNav">
-						<h3><a href="asdf">ARTS & SHAFTS</a></h3>
 						<h3><a href="asdf">CUNTS & CRAFTS</a></h3>
-						<h3><a href="asdf">PAST WORK</a></h3>
-						<h3><a href="/about">ABOUT</a></h3>
-						<h3><a href="/contact">CONTACT</a></h3>
+						<h3><a href="asdf">ARTS & SHAFTS</a></h3>
+						<h3><a href="asdf">THE CLASSIC</a></h3>
+						<h3 class="about"><a href="/about">ABOUT</a></h3>
+						<h3 class="contact"><a href="/contact">CONTACT</a></h3>
 					</div>
 					<div class="social">
-						<a href="asdf"><%= image_tag 'facebook.png' %></a>
 						<a href="asdf" class="soIcon"><%= image_tag 'instagram.png' %></a>
-						<a href="asdf" class="soIcon"><%= image_tag 'twitter.png' %></a>
 					</div>
 				</div>
 				<div class="col-md-10 right">
-					<div class="textDiv">
-						<form>
+					<div class="formOut textDiv">
+						<form action="mail" method="POST" id="mailerform" data-remote="false">
+						    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 							<div class="row">
 								<div class="col-md-4">
 								<label for="name">FIRST NAME</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								<input name ="first" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">
 								<label for="name">LAST NAME</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								<input name="last" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">
 								<label for="name">EMAIL</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								<input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">
 								<label for="name">SUBJECT</label>
-								<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+								<input name="subject" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-4">
 								<label for="name">MESSAGE</label>
-    							<textarea class="form-control" id="exampleTextarea" rows="5"></textarea>
+    							<textarea name="message" class="form-control" id="exampleTextarea" rows="5"></textarea>
 								</div>
 							</div>
 							<div class="row">
@@ -189,6 +215,9 @@ label{
 								</div>
 							</div>
 						</form>
+					</div>
+					<div class="formIn">
+						<h1>THANKS!</h1>
 					</div>
 				</div>
 			</div>
