@@ -202,7 +202,10 @@ label{
     	margin-top: 5%;
     }
     .navLogo img{
-    	width: 50%;
+    	width: 70%;
+    }
+    .mobileNavLinks h3{
+    	font-size: 3em
     }
     .logoCont{
     	text-align: center;
@@ -211,6 +214,19 @@ label{
     .textDiv{
     	margin-left: 0%;
     	font-size: 2em;
+    }
+    .formOut{
+    	font-size: 3em;
+    }
+    .formOut input{
+    	height: 5em;
+    }
+    .formRow{
+    	margin-top: 5%;
+    }
+    .sub{
+    	font-size: 1em;
+    	margin-top: 5%;
     }
 
 }
@@ -285,7 +301,7 @@ label{
 					<span class="navLogo"><a href="/home"><%= image_tag 'logo2.png' %></a></span>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row mobileNavLinks">
 				<div class="col-sm-4">
 					<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
 					<h3><a href="/contact">CONTACT</a></h3>
@@ -299,8 +315,8 @@ label{
 					<h3><a href="https://www.instagram.com/glitteris/">INSTAGRAM</a></h3>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-12">
+			<div class="row formRow">
+				<div class="col-sm-6">
 					<div class="formOut textDiv">
 						<form action="mail" method="POST" id="mailerformMobile" data-remote="false">
 						    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
