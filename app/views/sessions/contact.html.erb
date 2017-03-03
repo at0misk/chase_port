@@ -24,6 +24,20 @@
 			      })
 			      return false; // prevents normal behaviour
 			    });
+			      $('#mailerformMobile').on('submit', function(){
+			      var valuesToSubmit = $(this).serialize();
+			      $.ajax({
+			          type: "POST",
+			          url: "/mail", //sumbits it to the given url of the form
+			          data: valuesToSubmit,
+			          success: function(result){
+			            $('.formOut').fadeOut(300, function(){
+			              $('.formIn').fadeIn(300);
+			            });
+			          } // you want a difference between normal and ajax-calls, and json is standard
+			      })
+			      return false; // prevents normal behaviour
+			    });
 			});
 		</script>
 		<style>
@@ -288,7 +302,7 @@ label{
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="formOut textDiv">
-						<form action="mail" method="POST" id="mailerform" data-remote="false">
+						<form action="mail" method="POST" id="mailerformMobile" data-remote="false">
 						    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
 							<div class="row">
 								<div class="col-md-4">
