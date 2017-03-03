@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'contact' => 'sessions#contact'
   get 'no_party' => 'sessions#no'
   post 'mail' => 'sessions#mail'
+  get 'classic' => 'sessions#classic'
+  get 'arts' => 'sessions#arts'
+  get 'crafts' => 'sessions#crafts'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

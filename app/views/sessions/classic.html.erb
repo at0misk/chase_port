@@ -1,0 +1,186 @@
+<html>
+	<head>
+<!-- fotorama.css & fotorama.js. -->
+	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    // alert("Ready");
+			});
+		</script>
+		<style>
+			.left{
+				/*background-color: green;*/
+				height: 667px;
+			}
+			.right{
+				/*background-color: red;*/
+			}
+			.container-fluid{
+				margin-top: 5%;
+				margin-left: 10%;
+				/*background-color: orange;*/
+				height: 667px;
+			}
+			h2{
+				/*color: #ff64c7 !important;*/
+				/*font-weight: bold;*/
+				/* Lighter Color in logo is #ff99ca*/
+			}
+			h2:hover{
+				/*color: #ff99ca !important;*/
+			}
+			a:hover{
+				text-decoration: none;
+				color: #ff99ca !important;
+			}
+			a{
+				font-weight: bold;
+				color: #ff64c7 !important;
+			}
+			.fotorama__caption__wrap{
+			    font-size: 1.5em;
+			    background: none;
+				color: #ff99ca !important;
+			    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+			}
+			.fotorama__arrow{
+				/*color: #ff99ca !important;*/
+			}
+			.social{
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+			}
+			.social img{
+				display: inline;
+			}
+			.social img:hover{
+				opacity: 0.7;
+			}
+			.about{
+				margin-top: 2em;
+			}
+			.leftNav{
+				margin-top: 2em;
+			}
+			.navLogo img{
+				width: 100%;
+			}
+			.mobile{
+				display: none;
+			}
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .mobile{
+        display: block;
+    }
+    .desktop{
+    	display: none;
+    }
+    .right{
+    	text-align: center;
+    }
+    .mobileButtons{
+    	margin-top: 10%;
+    	display: block;
+    }
+    .modalButtons{
+    	display: none;
+    }
+    h3{
+    	/*display: inline;*/
+    }
+    .mobileFoto{
+    	margin-top: 5%;
+    }
+    .navLogo img{
+    	width: 50%;
+    }
+    .logoCont{
+    	text-align: center;
+    	margin-top: 5%;
+    }
+
+}
+		</style>
+	</head>
+	<body>
+		<div class="container-fluid desktop">
+			<div class="row">
+				<div class="col-md-2 left">
+					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
+					<div class="leftNav">
+						<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
+						<h3><a href="arts">ARTS & SHAFTS</a></h3>
+						<h3><a href="classic">THE CLASSIC</a></h3>
+						<h3 class="about"><a href="/about">ABOUT</a></h3>
+						<h3 class="contact"><a href="/contact">CONTACT</a></h3>
+					</div>
+					<div class="social">
+						<a href="https://www.instagram.com/glitteris/" class="soIcon"><%= image_tag 'instagram.png' %></a>
+					</div>
+				</div>
+				<div class="col-md-10 right">
+					<div class="fotorama" data-width="100%" data-ratio="750/500" data-minwidth="400" data-maxwidth="1000" data-minheight="300" data-maxheight="100%">
+					  <%= image_tag 'classic/6.jpg' %>
+					  <%= image_tag 'classic/16.jpg' %>
+					  <%= image_tag 'classic/17.jpg' %>
+					  <%= image_tag 'classic/23.jpg' %>
+					  <%= image_tag 'classic/20.jpg' %>
+					  <%= image_tag 'classic/25.jpg' %>
+					  <%= image_tag 'classic/27.jpg' %>
+					  <%= image_tag 'classic/26.jpg' %>
+					  <%= image_tag 'classic/10.jpg' %>
+					  <%= image_tag 'classic/11.jpg' %>
+					  <%= image_tag 'classic/12.jpg' %>
+					  <%= image_tag 'classic/9.jpg' %>
+					  <%= image_tag 'classic/38.jpg' %>
+					  <%= image_tag 'classic/32.jpg' %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container mobile">
+			<div class="row">
+				<div class="col-md-12 logoCont">
+					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
+					<h3><a href="/contact">CONTACT</a></h3>
+				</div>
+				<div class="col-sm-4">
+					<h3><a href="arts">ARTS & SHAFTS</a></h3>
+					<h3><a href="/about">ABOUT</a></h3>
+				</div>
+				<div class="col-sm-4">
+					<h3><a href="classic">THE CLASSIC</a></h3>
+					<h3><a href="https://www.instagram.com/glitteris/">INSTAGRAM</a></h3>
+				</div>
+			</div>
+			<div class="row mobileFoto">
+			<div class="col-md-12">
+				<div class="fotorama" data-width="100%" data-ratio="750/500" data-minwidth="400" data-maxwidth="1000" data-minheight="300" data-maxheight="100%">
+				  <%= image_tag 'classic/6.jpg' %>
+				  <%= image_tag 'classic/16.jpg' %>
+				  <%= image_tag 'classic/17.jpg' %>
+				  <%= image_tag 'classic/23.jpg' %>
+				  <%= image_tag 'classic/20.jpg' %>
+				  <%= image_tag 'classic/25.jpg' %>
+				  <%= image_tag 'classic/27.jpg' %>
+				  <%= image_tag 'classic/26.jpg' %>
+				  <%= image_tag 'classic/10.jpg' %>
+				  <%= image_tag 'classic/11.jpg' %>
+				  <%= image_tag 'classic/12.jpg' %>
+				  <%= image_tag 'classic/9.jpg' %>
+				  <%= image_tag 'classic/38.jpg' %>
+				  <%= image_tag 'classic/32.jpg' %>
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+</html>

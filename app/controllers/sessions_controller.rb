@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 	def index
+		# session[:over] = false
 	end
 	def home
 		session[:over] = true
@@ -17,5 +18,14 @@ class SessionsController < ApplicationController
 		format.json { render json: params['email'], status: :created}
 		format.js { render json: params['email'], status: :created}
 		end
+	end
+	def classic
+		session[:over] = true
+	end
+	def arts
+		session[:over] = true
+	end
+	def crafts
+		session[:over] = true
 	end
 end

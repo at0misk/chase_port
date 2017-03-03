@@ -7,8 +7,8 @@
 		</script>
 		<style>
 			.left{
-				height: 750px;
 				/*background-color: green;*/
+				height: 667px;
 			}
 			.right{
 				/*background-color: red;*/
@@ -17,7 +17,7 @@
 				margin-top: 5%;
 				margin-left: 10%;
 				/*background-color: orange;*/
-				height: 750px;
+				height: 667px;
 			}
 			h2{
 				/*color: #ff64c7 !important;*/
@@ -74,22 +74,68 @@
 			.social img:hover{
 				opacity: 0.7;
 			}
+			.navLogo img{
+				width: 100%;
+			}
+			.mobile{
+				display: none;
+			}
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .mobile{
+        display: block;
+    }
+    .desktop{
+    	display: none;
+    }
+    .right{
+    	text-align: center;
+    }
+    .mobileButtons{
+    	margin-top: 10%;
+    	display: block;
+    }
+    .modalButtons{
+    	display: none;
+    }
+    h3{
+    	/*display: inline;*/
+    }
+    .mobileFoto{
+    	margin-top: 5%;
+    }
+    .navLogo img{
+    	width: 50%;
+    }
+    .logoCont{
+    	text-align: center;
+    	margin-top: 5%;
+    }
+    .mobileParagrph{
+    	margin-top: 5%;
+    	font-size: 2.5em;
+    }
+    .headshot{
+    	margin-top: 5%;
+    }
+
+}
 		</style>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container-fluid desktop">
 			<div class="row">
 				<div class="col-md-2 left">
-					<a href="/home"><%= image_tag 'logo2.png' %></a>
+					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
 					<div class="leftNav">
-						<h3><a href="asdf">CUNTS & CRAFTS</a></h3>
-						<h3><a href="asdf">ARTS & SHAFTS</a></h3>
-						<h3><a href="asdf">THE CLASSIC</a></h3>
+						<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
+						<h3><a href="arts">ARTS & SHAFTS</a></h3>
+						<h3><a href="classic">THE CLASSIC</a></h3>
 						<h3 class="about"><a href="/about">ABOUT</a></h3>
 						<h3 class="contact"><a href="/contact">CONTACT</a></h3>
 					</div>
 					<div class="social">
-						<a href="asdf" class="soIcon"><%= image_tag 'instagram.png' %></a>
+						<a href="https://www.instagram.com/glitteris/" class="soIcon"><%= image_tag 'instagram.png' %></a>
 					</div>
 				</div>
 				<div class="col-md-10 right">
@@ -97,6 +143,40 @@
 						<div class="headshot"><img src="http://data.whicdn.com/images/82351288/original.png" class="headshotImg">
 						</div>
 						<div class="textBody">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam congue ornare. Duis non nulla diam. Quisque hendrerit odio pellentesque, mollis ligula sed, eleifend lorem. Pellentesque ac risus vitae turpis pretium egestas eu at ex. Praesent vel ante non dolor lacinia lacinia. Mauris congue neque in justo volutpat luctus. Vestibulum tincidunt justo nec condimentum sollicitudin. Phasellus ut ex a nibh tincidunt porttitor. Sed tellus nisi, condimentum sed suscipit quis, porttitor et felis. Vestibulum aliquet ornare mattis. Nulla scelerisque, ligula nec rutrum tempus, nunc enim egestas risus, vitae vehicula ligula nulla nec lacus. Fusce consectetur pellentesque dui, ut aliquam nisi tempor a. Proin sed malesuada erat, pulvinar malesuada sapien. Ut placerat eleifend nulla, non consequat augue hendrerit feugiat. Aliquam suscipit leo eros, sed pharetra justo vulputate non. Curabitur sit amet fermentum est, quis faucibus mauris.</p>
+
+						<p>Mauris a interdum turpis. Mauris posuere sem vitae sapien finibus dapibus. Aenean molestie enim vel ex bibendum, ac rutrum sapien fringilla. Etiam dapibus ligula sed massa aliquam, tempus mollis est rutrum. Ut sit amet sapien id elit feugiat viverra et eget libero. Vivamus ipsum libero, tincidunt ac lobortis ac, tincidunt auctor lacus. Quisque augue ante, tincidunt laoreet nulla vitae, tincidunt congue lorem. Aliquam eleifend, felis ornare pretium mollis, diam velit tristique lacus, quis efficitur lectus tortor non nunc.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container mobile">
+			<div class="row">
+				<div class="col-md-12 logoCont">
+					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
+					<h3><a href="/contact">CONTACT</a></h3>
+				</div>
+				<div class="col-sm-4">
+					<h3><a href="arts">ARTS & SHAFTS</a></h3>
+					<h3><a href="/about">ABOUT</a></h3>
+				</div>
+				<div class="col-sm-4">
+					<h3><a href="classic">THE CLASSIC</a></h3>
+					<h3><a href="https://www.instagram.com/glitteris/">INSTAGRAM</a></h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div>
+						<div class="headshot"><img src="http://data.whicdn.com/images/82351288/original.png" class="headshotImg">
+						</div>
+						<div class="mobileParagrph">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam congue ornare. Duis non nulla diam. Quisque hendrerit odio pellentesque, mollis ligula sed, eleifend lorem. Pellentesque ac risus vitae turpis pretium egestas eu at ex. Praesent vel ante non dolor lacinia lacinia. Mauris congue neque in justo volutpat luctus. Vestibulum tincidunt justo nec condimentum sollicitudin. Phasellus ut ex a nibh tincidunt porttitor. Sed tellus nisi, condimentum sed suscipit quis, porttitor et felis. Vestibulum aliquet ornare mattis. Nulla scelerisque, ligula nec rutrum tempus, nunc enim egestas risus, vitae vehicula ligula nulla nec lacus. Fusce consectetur pellentesque dui, ut aliquam nisi tempor a. Proin sed malesuada erat, pulvinar malesuada sapien. Ut placerat eleifend nulla, non consequat augue hendrerit feugiat. Aliquam suscipit leo eros, sed pharetra justo vulputate non. Curabitur sit amet fermentum est, quis faucibus mauris.</p>
 
 						<p>Mauris a interdum turpis. Mauris posuere sem vitae sapien finibus dapibus. Aenean molestie enim vel ex bibendum, ac rutrum sapien fringilla. Etiam dapibus ligula sed massa aliquam, tempus mollis est rutrum. Ut sit amet sapien id elit feugiat viverra et eget libero. Vivamus ipsum libero, tincidunt ac lobortis ac, tincidunt auctor lacus. Quisque augue ante, tincidunt laoreet nulla vitae, tincidunt congue lorem. Aliquam eleifend, felis ornare pretium mollis, diam velit tristique lacus, quis efficitur lectus tortor non nunc.</p>
