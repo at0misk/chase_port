@@ -34,6 +34,10 @@
 			            $('.formOut').fadeOut(300, function(){
 			              $('.formIn').fadeIn(300);
 			              $(window).scrollTop(0);
+			              var scale = 'scale(1)';
+						document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
+						 document.body.style.msTransform =   scale;       // IE 9
+						 document.body.style.transform = scale; 
 			            });
 			          } // you want a difference between normal and ajax-calls, and json is standard
 			      })
