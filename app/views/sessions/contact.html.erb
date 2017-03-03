@@ -33,6 +33,7 @@
 			          success: function(result){
 			            $('.formOut').fadeOut(300, function(){
 			              $('.formIn').fadeIn(300);
+			              $(window).scrollTop(0);
 			            });
 			          } // you want a difference between normal and ajax-calls, and json is standard
 			      })
