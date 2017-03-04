@@ -16,6 +16,22 @@
 			    $('#fs').click(function(){
 			    	fotorama.requestFullScreen();
 			    })
+				  $(function() {
+				      $('.dropdown').on({
+				          "click": function(event) {
+				            if ($(event.target).closest('.dropdown-toggle').length) {
+				              $(this).data('closable', true);
+				            } else {
+				              $(this).data('closable', false);
+				            }
+				          },
+				          "hide.bs.dropdown": function(event) {
+				            hide = $(this).data('closable');
+				            $(this).data('closable', true);
+				            return hide;
+				          }
+				      });
+				  });
 			});
 		</script>
 		<style>
@@ -171,7 +187,23 @@ fieldset[disabled] .sub.active {
 label{
   color: #FF64C7; 
 }
-
+    .sub{
+    	font-size: 2em;
+    }
+    .dropdown-menu{
+	    width: 100%;
+	    padding: 2% 0% 4% 0%;
+	    position: static;
+	    margin-bottom: 2%;
+    }
+    .dropdown-menu h3{
+    	font-size: 2.4em;
+    }
+    #dLabel{
+	    position: absolute;
+	    right: 18px;
+	    top: 48px;
+    }
 }
 		</style>
 	</head>
@@ -212,12 +244,16 @@ label{
 			</div>
 		</div>
 		<div class="container mobile">
+			<div class="dropdown">
 			<div class="row">
 				<div class="col-md-12 logoCont">
 					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
 				</div>
 			</div>
-			<div class="row mobileNavLinks">
+			  <button id="dLabel" class="btn sub" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dLabel">
 				<div class="col-sm-4">
 					<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
 					<h3><a href="/contact">CONTACT</a></h3>
@@ -230,6 +266,7 @@ label{
 					<h3><a href="classic">THE CLASSIC</a></h3>
 					<h3><a href="https://www.instagram.com/chasekoopersmith/">INSTAGRAM</a></h3>
 				</div>
+			  </div>
 			</div>
 			<div class="row mobileFoto">
 			<div class="col-md-12">
