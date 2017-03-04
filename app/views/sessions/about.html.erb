@@ -19,6 +19,11 @@
 				  //     });
 				  // });
 				$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+function clearMenus(e) {
+  if (e && typof e === 'object' && e.type === 'touchstart') {
+    if ($(this).closest('.dropdown-menu').length) { return; }
+  }
+}
 			});
 		</script>
 		<style>
