@@ -2,26 +2,22 @@
 	<head>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('.dropdown-menu').on('click', function(event){
-				    var events = $._data(document, 'events') || {};
-				    events = events.click || [];
-				    for(var i = 0; i < events.length; i++) {
-				        if(events[i].selector) {
-
-				            //Check if the clicked element matches the event selector
-				            if($(event.target).is(events[i].selector)) {
-				                events[i].handler.call(event.target, event);
+				  $(function() {
+				      $('.dropdown').on({
+				          "click": function(event) {
+				            if ($(event.target).closest('.dropdown-toggle').length) {
+				              $(this).data('closable', true);
+				            } else {
+				              $(this).data('closable', false);
 				            }
-
-				            // Check if any of the clicked element parents matches the 
-				            // delegated event selector (Emulating propagation)
-				            $(event.target).parents(events[i].selector).each(function(){
-				                events[i].handler.call(this, event);
-				            });
-				        }
-				    }
-				    event.stopPropagation(); //Always stop propagation
-				});
+				          },
+				          "hide.bs.dropdown": function(event) {
+				            hide = $(this).data('closable');
+				            $(this).data('closable', true);
+				            return hide;
+				          }
+				      });
+				  });
 			});
 		</script>
 		<style>
