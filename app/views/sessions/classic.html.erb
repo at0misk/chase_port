@@ -4,7 +4,7 @@
 	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
 		<script type="text/javascript">
-			$(document).ready(function(){
+			$(document).on('ready page:load', function(){
 				// 1. Initialize fotorama manually.
 			    var $fotoramaDiv = $('#fotorama').fotorama();
 
@@ -32,7 +32,43 @@
 				          }
 				      });
 				  });
+					$(function() {
+				      $('.dropdown').on({
+				          "click": function(event) {
+				          	console.log("CLICKED");
+				            if ($(event.target).closest('.dropdown-toggle').length) {
+				              $(this).data('closable', true);
+				            } else {
+				              $(this).data('closable', false);
+				            }
+				          },
+				          "hide.bs.dropdown": function(event) {
+				            hide = $(this).data('closable');
+				            $(this).data('closable', true);
+				            return hide;
+				          }
+				      });
+				  });
 			});
+			$(document).ready(function(){
+					$(function() {
+				      $('.dropdown').on({
+				          "click": function(event) {
+				          	console.log("CLICKED");
+				            if ($(event.target).closest('.dropdown-toggle').length) {
+				              $(this).data('closable', true);
+				            } else {
+				              $(this).data('closable', false);
+				            }
+				          },
+				          "hide.bs.dropdown": function(event) {
+				            hide = $(this).data('closable');
+				            $(this).data('closable', true);
+				            return hide;
+				          }
+				      });
+				  });
+			})
 		</script>
 		<style>
 			.left{
@@ -193,7 +229,7 @@ label{
     .dropdown-menu{
 	    width: 100%;
 	    padding: 2% 0% 4% 0%;
-	    position: static;
+	    position: absolute !important;
 	    margin-bottom: 2%;
     }
     .dropdown-menu h3{
@@ -207,7 +243,7 @@ label{
 }
 		</style>
 	</head>
-	<body>
+<body data-no-turbolink="true">
 		<div class="container-fluid desktop">
 			<div class="row">
 				<div class="col-md-2 left">
