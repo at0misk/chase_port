@@ -5,7 +5,17 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
 		<script type="text/javascript">
 			$(document).ready(function(){
-			    // alert("Ready");
+				// 1. Initialize fotorama manually.
+			    var $fotoramaDiv = $('#fotorama').fotorama();
+
+			    // 2. Get the API object.
+			    var fotorama = $fotoramaDiv.data('fotorama');
+
+			    // 3. Inspect it in console.
+			    console.log(fotorama);
+			    $('#fs').click(function(){
+			    	fotorama.requestFullScreen();
+			    })
 			});
 		</script>
 		<style>
@@ -104,10 +114,63 @@
     	text-align: center;
     	margin-top: 5%;
     }
+    .fscol{
+    	text-align: center;
+    	margin-top: 5%;
+    }
     /* Need to make icons bigger for mobile */
 /*    .fotorama__fullscreen-icon img{
     	width: 300px !important;
     }*/
+.sub { 
+  color: #ffffff; 
+  background-color: #FF64C7; 
+  border-color: #A36281; 
+  font-size: 2.5em;
+} 
+ 
+.sub:hover, 
+.sub:focus, 
+.sub:active, 
+.sub.active, 
+.open .dropdown-toggle.sub { 
+  color: #ffffff; 
+  background-color: #FF99CA; 
+  border-color: #A36281; 
+} 
+ 
+.sub:active, 
+.sub.active, 
+.open .dropdown-toggle.sub { 
+  background-image: none; 
+} 
+ 
+.sub.disabled, 
+.sub[disabled], 
+fieldset[disabled] .sub, 
+.sub.disabled:hover, 
+.sub[disabled]:hover, 
+fieldset[disabled] .sub:hover, 
+.sub.disabled:focus, 
+.sub[disabled]:focus, 
+fieldset[disabled] .sub:focus, 
+.sub.disabled:active, 
+.sub[disabled]:active, 
+fieldset[disabled] .sub:active, 
+.sub.disabled.active, 
+.sub[disabled].active, 
+fieldset[disabled] .sub.active { 
+  background-color: #FF64C7; 
+  border-color: #A36281; 
+} 
+ 
+.sub .badge { 
+  color: #FF64C7; 
+  background-color: #ffffff; 
+}
+label{
+  color: #FF64C7; 
+}
 
 }
 		</style>
@@ -116,13 +179,13 @@
 		<div class="container-fluid desktop">
 			<div class="row">
 				<div class="col-md-2 left">
-					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
+					<span class="navLogo"><a href="/crafts"><%= image_tag 'logo2.png' %></a></span>
 					<div class="leftNav">
-						<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
-						<h3><a href="arts">ARTS & SHAFTS</a></h3>
-						<h3><a href="classic">THE CLASSIC</a></h3>
-						<h3 class="about"><a href="/about">ABOUT</a></h3>
-						<h3 class="contact"><a href="/contact">CONTACT</a></h3>
+						<h4><a href="crafts">CUNTS & CRAFTS</a></h4>
+						<h4><a href="arts">ARTS & SHAFTS</a></h4>
+						<h4><a href="classic">THE CLASSIC</a></h4>
+						<h4 class="about"><a href="/about">ABOUT</a></h4>
+						<h4 class="contact"><a href="/contact">CONTACT</a></h4>
 					</div>
 					<div class="social">
 						<a href="https://www.instagram.com/glitteris/" class="soIcon"><%= image_tag 'instagram.png' %></a>
@@ -170,7 +233,7 @@
 			</div>
 			<div class="row mobileFoto">
 			<div class="col-md-12">
-				<div class="fotorama" data-width="100%" data-ratio="750/500" data-maxwidth="1000" data-minheight="300" data-maxheight="100%" data-allowfullscreen="true">
+				<div id="fotorama" class="fotorama" data-width="100%" data-ratio="750/500" data-maxwidth="1000" data-minheight="300" data-maxheight="100%" data-allowfullscreen="true">
 				  <%= image_tag 'classic/6.jpg' %>
 				  <%= image_tag 'classic/16.jpg' %>
 				  <%= image_tag 'classic/17.jpg' %>
@@ -185,6 +248,11 @@
 				  <%= image_tag 'classic/9.jpg' %>
 				  <%= image_tag 'classic/38.jpg' %>
 				  <%= image_tag 'classic/32.jpg' %>
+				</div>
+			</div>
+			<div class="row fsbutton">
+				<div class="col-md-12 fscol">
+				<button id="fs" class="btn sub">FULLSCREEN</button>
 				</div>
 			</div>
 			</div>
