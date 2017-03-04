@@ -13,6 +13,11 @@
 	<!-- fotorama.css & fotorama.js. -->
 		<script type="text/javascript">
 			$(document).ready(function(){
+				$( "#menuButton" ).click(function() {
+				  $( ".menuList" ).toggle( "slow", function() {
+				    // Animation complete.
+				  });
+				});
 				function fadeCB(callback){
 				  $('.formOut').fadeOut(600);
 				  callback;
@@ -269,7 +274,7 @@ label{
     	font-size: 3em;
     }
     .sub{
-    	font-size: 2em;
+    	font-size: 1em;
     }
     .dropdown-menu{
 	    width: 100%;
@@ -286,6 +291,17 @@ label{
 	    top: 48px;
 	    margin-top: 0px !important;
 	    padding-bottom: 0.3em;
+    }
+    #menuButton{
+	    position: absolute;
+	    right: 84px;
+	    top: 51px;
+	    margin-top: 0%;
+	    font-size: 2em;
+    }
+    .menuList{
+    	overflow-y: auto;
+    	display: none;
     }
 }
 		</style>
@@ -354,29 +370,21 @@ label{
 			</div>
 		</div>
 		<div class="container mobile">
-			<div class="dropdown">
 			<div class="row">
 				<div class="col-md-12 logoCont">
 					<span class="navLogo"><a href="/crafts"><%= image_tag 'logo2.png' %></a></span>
 				</div>
 			</div>
-			  <button id="dLabel" class="btn sub" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-			  </button>
-			  <div class="dropdown-menu" aria-labelledby="dLabel">
-				<div class="col-sm-4">
-					<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
-					<h3><a href="/contact">CONTACT</a></h3>
+			  <button id="menuButton" class="btn sub">MENU</button>
+			<div class="menuList">
+				<div class="col-sm-12">
+					<h2><a href="crafts">CUNTS & CRAFTS</a></h2>
+					<h2><a href="arts">ARTS & SHAFTS</a></h2>
+					<h2><a href="classic">THE CLASSIC</a></h2>
+					<h2><a href="/about">ABOUT</a></h2>
+					<h2><a href="/contact">CONTACT</a></h2>
+					<h2><a href="https://www.instagram.com/chasekoopersmith/" target="_blank">INSTAGRAM</a></h2>
 				</div>
-				<div class="col-sm-4">
-					<h3><a href="arts">ARTS & SHAFTS</a></h3>
-					<h3><a href="/about">ABOUT</a></h3>
-				</div>
-				<div class="col-sm-4">
-					<h3><a href="classic">THE CLASSIC</a></h3>
-					<h3><a href="https://www.instagram.com/chasekoopersmith/" target="_blank">INSTAGRAM</a></h3>
-				</div>
-			  </div>
 			</div>
 			<div class="row formRow">
 				<div class="col-sm-6">
