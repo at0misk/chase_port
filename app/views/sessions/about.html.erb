@@ -2,28 +2,20 @@
 	<head>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				  // $(function() {
-				  //     $('.dropdown').on({
-				  //         "click": function(event) {
-				  //           if ($(event.target).closest('.dropdown-toggle').length) {
-				  //             $(this).data('closable', true);
-				  //           } else {
-				  //             $(this).data('closable', false);
-				  //           }
-				  //         },
-				  //         "hide.bs.dropdown": function(event) {
-				  //           hide = $(this).data('closable');
-				  //           $(this).data('closable', true);
-				  //           return hide;
-				  //         }
-				  //     });
-				  // });
-				$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-function clearMenus(e) {
-  if (e && typof e === 'object' && e.type === 'touchstart') {
-    if ($(this).closest('.dropdown-menu').length) { return; }
-  }
-}
+				      $('.dropdown').on({
+				          "click": function(event) {
+				            if ($(event.target).closest('.dropdown-toggle').length) {
+				              $(this).data('closable', true);
+				            } else {
+				              $(this).data('closable', false);
+				            }
+				          },
+				          "hide.bs.dropdown": function(event) {
+				            hide = $(this).data('closable');
+				            $(this).data('closable', true);
+				            return hide;
+				          }
+				      });
 			});
 		</script>
 		<style>
