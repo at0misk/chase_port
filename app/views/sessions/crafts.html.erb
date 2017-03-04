@@ -43,6 +43,11 @@
 				          }
 				      });
 				  });
+				$( "#menuButton" ).click(function() {
+				  $( ".menuList" ).toggle( "slow", function() {
+				    // Animation complete.
+				  });
+				});
 			})
 		</script>
 		<style>
@@ -210,11 +215,13 @@ label{
     .dropdown-menu h3{
     	font-size: 2.4em;
     }
-    #dLabel{
+    #menuButton{
 	    position: absolute;
-	    right: 18px;
-	    top: 48px;
-    	padding-bottom: 0.3em;
+	    right: 84px;
+	    top: 51px;
+    }
+    .menuList{
+    	display: none;
     }
 }
 		</style>
@@ -252,30 +259,24 @@ label{
 			</div>
 		</div>
 		<div class="container mobile">
-			<div class="dropdown">
 			<div class="row">
 				<div class="col-md-12 logoCont">
-					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
+					<span class="navLogo"><a href="/crafts"><%= image_tag 'logo2.png' %></a></span>
 				</div>
 			</div>
-			  <button id="dLabel" class="btn sub" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+			  <button id="menuButton" class="btn sub">
+				MENU
 			  </button>
-			  <div class="dropdown-menu" aria-labelledby="dLabel">
-				<div class="col-sm-4">
-					<h3><a href="crafts">CUNTS & CRAFTS</a></h3>
-					<h3><a href="/contact">CONTACT</a></h3>
-				</div>
-				<div class="col-sm-4">
-					<h3><a href="arts">ARTS & SHAFTS</a></h3>
-					<h3><a href="/about">ABOUT</a></h3>
-				</div>
-				<div class="col-sm-4">
-					<h3><a href="classic">THE CLASSIC</a></h3>
-					<h3><a href="https://www.instagram.com/chasekoopersmith/" target="_blank">INSTAGRAM</a></h3>
+			  <div class="menuList">
+				<div class="col-sm-12">
+					<h2><a href="crafts">CUNTS & CRAFTS</a></h2>
+					<h2><a href="arts">ARTS & SHAFTS</a></h2>
+					<h2><a href="classic">THE CLASSIC</a></h2>
+					<h2><a href="/about">ABOUT</a></h2>
+					<h2><a href="/contact">CONTACT</a></h2>
+					<h2><a href="https://www.instagram.com/chasekoopersmith/" target="_blank">INSTAGRAM</a></h3>
 				</div>
 			  </div>
-			</div>
 			<div class="row mobileFoto">
 			<div class="col-md-12">
 				<div id="fotorama" class="fotorama" data-width="100%" data-ratio="750/500" data-maxwidth="1000" data-minheight="300" data-maxheight="100%" data-allowfullscreen="true">
