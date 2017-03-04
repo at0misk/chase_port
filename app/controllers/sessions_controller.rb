@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	layout false
 	def index
 		# session[:over] = false
 	end
