@@ -216,13 +216,18 @@ label{
   				color: #FF64C7; 
 			}
 			.navLogo img{
-				width: 100%;
+				width: auto;
 			}
 			.mobile{
 				display: none;
 			}
 /* Media Queries */
-@media screen and (max-width: 992px) {
+@media only screen and (min-device-width : 481px) and (max-device-width : 990px) {
+	.textDiv{
+		margin: 6% 20%;
+	}
+	}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .mobile{
         display: block;
     }
@@ -319,7 +324,7 @@ label{
 <body data-no-turbolink="true">
 		<div class="container-fluid desktop">
 			<div class="row">
-				<div class="col-md-2 left">
+				<div class="col-md-2 col-sm-2 left">
 					<span class="navLogo"><a href="/classic"><%= image_tag 'logo2.png' %></a></span>
 					<div class="leftNav">
 						<h4><a href="crafts">CUNTS & CRAFTS</a></h4>
@@ -332,7 +337,7 @@ label{
 						<a href="https://www.instagram.com/chasekoopersmith/" class="soIcon" target="_blank"><%= image_tag 'instagram.png' %></a>
 					</div>
 				</div>
-				<div class="col-md-10 right">
+				<div class="col-md-10 col-sm-10 right">
 					<div class="formOut textDiv">
 						<form action="mail" method="POST" id="mailerform" data-remote="false">
 						    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
