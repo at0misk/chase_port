@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 	layout false
 	def index
 		# session[:over] = false
+		render "index"
 	end
 	def home
 		session[:over] = true
