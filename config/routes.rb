@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'sessions#index'
   get 'home' => 'sessions#home'
-  get 'about' => 'sessions#about'
   get 'contact' => 'sessions#contact'
   get 'no_party' => 'sessions#no'
   post 'mail' => 'sessions#mail'
